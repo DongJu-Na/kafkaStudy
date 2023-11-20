@@ -1,0 +1,62 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: "kafka-study"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+  devtools:
+    livereload:
+      enabled: true
+    add-properties: false
+  thymeleaf:
+    cache: false
+server:
+  port: "${port:8080}"
+
+
+logging:
+  level:
+    com.kafkaStudy: DEBUG
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+  devtools:
+    livereload:
+      enabled: true
+    add-properties: false
+  thymeleaf:
+    cache: false
+server:
+  port: "${port:8080}"
+
+logging:
+  level:
+    com.kafkaStudy: DEBUG
