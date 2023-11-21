@@ -1,6 +1,10 @@
 spring:
   profiles:
     active: dev
+  thymeleaf:
+    prefix : classpath:templates/
+    suffix : .html
+    cache : false
   application:
     name: "kafka-study"
 
@@ -21,6 +25,8 @@ spring:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
   devtools:
     livereload:
+      enabled: true
+    restart:
       enabled: true
     add-properties: false
   thymeleaf:
