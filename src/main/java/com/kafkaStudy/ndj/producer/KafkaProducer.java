@@ -9,15 +9,10 @@ import org.springframework.stereotype.Service;
 @NoArgsConstructor
 public class KafkaProducer {
 
-    private static final String TOPIC = "exam";
+    private static final String TOPIC = "testTopic";
     private  KafkaTemplate<String, String> kafkaTemplate;
 
-    @Autowired
-    public KafkaProducer(@SuppressWarnings("rawtypes") KafkaTemplate kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
-    }
-
-    public void sendMessage(String message) {
+    public void sendMessgae(String message) {
         System.out.printf("Produce message : %s%n", message);
         this.kafkaTemplate.send(TOPIC, message);
     }
