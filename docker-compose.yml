@@ -17,3 +17,10 @@ services:  # docker-compose의 경우 docker 컨테이너로 수행될 서비스
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181 # kafka가 zookeeper에 커넥션하기 위한 대상을 지정
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+  application:
+    image: ndj
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: application
+    restart: always
