@@ -34,6 +34,8 @@ spring:
       enabled: true
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop        # DB 초기화 전략 (none, create, create-drop, update, validate)
   devtools:
     livereload:
       enabled: true
@@ -65,6 +67,8 @@ spring:
       enabled: true
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none        # DB 초기화 전략 (none, create, create-drop, update, validate)
   devtools:
     livereload:
       enabled: true
